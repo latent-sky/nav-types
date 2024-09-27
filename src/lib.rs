@@ -52,7 +52,7 @@ mod enu;
 mod ned;
 mod nvector;
 mod utils;
-mod wgs84;
+pub mod wgs84;
 
 pub use self::utils::RealFieldCopy;
 pub use self::ecef::ECEF;
@@ -64,7 +64,7 @@ pub use self::wgs84::WGS84;
 // This is a private trait to access the underlying structure, this is used
 // so that this crate can access the implementation details without users
 // of this crate knowing the underlying details.
-trait Access<N> {
+pub trait Access<N> {
     // Transfer access of underlying vector
     fn access(self) -> N;
 }
